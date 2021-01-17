@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="testRunner.TestRunner" time="105.75" errors="1" skipped="0">
+<testsuite tests="3" failures="0" name="testRunner.TestRunner" time="173.142" errors="2" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jre1.8.0_251\bin"/>
@@ -65,24 +65,23 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
-  <testcase classname="checkout" name="Test end to end checkout flow for purchasing Pillow using Credit Card as payment method #1" time="32.38"/>
-  <testcase classname="checkout" name="Test end to end checkout flow for purchasing Pillow using Credit Card as payment method #2" time="73.37">
-    <error message="Expected condition failed: waiting for frame to be available: Proxy element for: DefaultElementLocator &apos;By.xpath: //iframe[contains(@src,&apos;api.sandbox&apos;)]&apos; (tried for 30 second(s) with 500 milliseconds interval)" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for frame to be available: Proxy element for: DefaultElementLocator &apos;By.xpath: //iframe[contains(@src,&apos;api.sandbox&apos;)]&apos; (tried for 30 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+  <testcase classname="PurchasePillow" name="Test end to end checkout flow for purchasing Pillow using Credit Card as payment method #1" time="38.938"/>
+  <testcase classname="PurchasePillow" name="Test end to end checkout flow for purchasing Pillow using Credit Card as payment method #2" time="67.101">
+    <error message="Expected condition failed: waiting for visibility of element located by By.xpath: //span[@class=&apos;text-page-title&apos;]/p[text()=&apos;Select Payment&apos;] (tried for 50 second(s) with 5000 milliseconds interval)" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[@class=&apos;text-page-title&apos;]/p[text()=&apos;Select Payment&apos;] (tried for 50 second(s) with 5000 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at pageClasses.OrderSummary.switchTwoFrames(OrderSummary.java:139)
-	at pageClasses.OrderSummary.verifyOTPpage(OrderSummary.java:130)
-	at stepDefinitions.stepDefinition.user_verifies_pop_password_textbox(stepDefinition.java:102)
-	at ✽.User verifies pop password textbox(file:///D:/Koshal-Practice/workspace/DakatalisAssignment/./Features/checkout.feature:17)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//iframe[contains(@src,&apos;api.sandbox&apos;)]&quot;}
+	at pageClasses.OrderSummary.verifyPageTitle(OrderSummary.java:76)
+	at stepDefinitions.stepDefinition.user_verifies_popup_page_title_as(stepDefinition.java:71)
+	at ✽.User verifies popup page title as &quot;Select Payment&quot;(file:///D:/Koshal-Practice/workspace/DakatalisAssignment/./Features/PurchasePillow.feature:13)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[@class=&apos;text-page-title&apos;]/p[text()=&apos;Select Payment&apos;]&quot;}
   (Session info: chrome=87.0.4280.141)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;DESKTOP-BR4SE3P&apos;, ip: &apos;192.168.1.102&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_251&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.141, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:64242}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 24674fc936d9768f6e23f17d76d43021
-*** Element info: {Using=xpath, value=//iframe[contains(@src,&apos;api.sandbox&apos;)]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.141, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50272}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: d1b65e41439cc6138cef284a47cc7a52
+*** Element info: {Using=xpath, value=//span[@class=&apos;text-page-title&apos;]/p[text()=&apos;Select Payment&apos;]}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -97,17 +96,11 @@ Session ID: 24674fc936d9768f6e23f17d76d43021
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
 	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy20.getWrappedElement(Unknown Source)
-	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:50)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.frame(RemoteWebDriver.java:891)
-	at org.openqa.selenium.support.ui.ExpectedConditions$19.apply(ExpectedConditions.java:553)
-	at org.openqa.selenium.support.ui.ExpectedConditions$19.apply(ExpectedConditions.java:549)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	at pageClasses.OrderSummary.switchTwoFrames(OrderSummary.java:139)
-	at pageClasses.OrderSummary.verifyOTPpage(OrderSummary.java:130)
-	at stepDefinitions.stepDefinition.user_verifies_pop_password_textbox(stepDefinition.java:102)
+	at pageClasses.OrderSummary.verifyPageTitle(OrderSummary.java:76)
+	at stepDefinitions.stepDefinition.user_verifies_popup_page_title_as(stepDefinition.java:71)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -158,7 +151,8 @@ Session ID: 24674fc936d9768f6e23f17d76d43021
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </error>
     <system-out>
-Scenario Outline: Test end to end checkout flow for purchasing Pillow using Credit Card as payment method # Features/checkout.feature:25
+@WebScenario
+Scenario Outline: Test end to end checkout flow for purchasing Pillow using Credit Card as payment method # Features/PurchasePillow.feature:26
   Given User Launches &quot;chrome&quot; browser                                                                    # stepDefinitions.stepDefinition.user_launches_browser(java.lang.String)
   When Navigate to URL &quot;https://demo.midtrans.com/&quot;                                                       # stepDefinitions.stepDefinition.navigate_to_url(java.lang.String)
   Then Verify home page title as &quot;Sample Store&quot; and BuyNow button                                         # stepDefinitions.stepDefinition.verify_home_page_title_as_and_buy_now_button(java.lang.String)
@@ -168,27 +162,21 @@ Scenario Outline: Test end to end checkout flow for purchasing Pillow using Cred
   Then User verifies popup page title as &quot;Order Summary&quot;                                                  # stepDefinitions.stepDefinition.user_verifies_popup_page_title_as(java.lang.String)
   When User clicks on Continue button                                                                     # stepDefinitions.stepDefinition.user_clicks_on_continue_button()
   Then User verifies popup page title as &quot;Select Payment&quot;                                                 # stepDefinitions.stepDefinition.user_verifies_popup_page_title_as(java.lang.String)
-  When User clicks on payment method as &quot;Credit/Debit Card&quot;                                               # stepDefinitions.stepDefinition.user_clicks_on_payment_method_as(java.lang.String)
-  Then User verifies popup page title as &quot;Credit/Debit Card&quot;                                              # stepDefinitions.stepDefinition.user_verifies_popup_page_title_as(java.lang.String)
-  When User enters card details &quot;4911111111111113&quot; and &quot;02&quot; and &quot;20&quot; and &quot;123&quot;                            # stepDefinitions.stepDefinition.user_enters_card_details_and_and_and(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
-  And User clicks on PayNow button                                                                        # stepDefinitions.stepDefinition.user_clicks_on_pay_now_button()
-  Then User verifies pop password textbox                                                                 # stepDefinitions.stepDefinition.user_verifies_pop_password_textbox()
-      org.openqa.selenium.TimeoutException: Expected condition failed: waiting for frame to be available: Proxy element for: DefaultElementLocator &apos;By.xpath: //iframe[contains(@src,&apos;api.sandbox&apos;)]&apos; (tried for 30 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+      org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[@class=&apos;text-page-title&apos;]/p[text()=&apos;Select Payment&apos;] (tried for 50 second(s) with 5000 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at pageClasses.OrderSummary.switchTwoFrames(OrderSummary.java:139)
-	at pageClasses.OrderSummary.verifyOTPpage(OrderSummary.java:130)
-	at stepDefinitions.stepDefinition.user_verifies_pop_password_textbox(stepDefinition.java:102)
-	at âœ½.User verifies pop password textbox(file:///D:/Koshal-Practice/workspace/DakatalisAssignment/./Features/checkout.feature:17)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//iframe[contains(@src,&apos;api.sandbox&apos;)]&quot;}
+	at pageClasses.OrderSummary.verifyPageTitle(OrderSummary.java:76)
+	at stepDefinitions.stepDefinition.user_verifies_popup_page_title_as(stepDefinition.java:71)
+	at âœ½.User verifies popup page title as &quot;Select Payment&quot;(file:///D:/Koshal-Practice/workspace/DakatalisAssignment/./Features/PurchasePillow.feature:13)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[@class=&apos;text-page-title&apos;]/p[text()=&apos;Select Payment&apos;]&quot;}
   (Session info: chrome=87.0.4280.141)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;DESKTOP-BR4SE3P&apos;, ip: &apos;192.168.1.102&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_251&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.141, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:64242}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 24674fc936d9768f6e23f17d76d43021
-*** Element info: {Using=xpath, value=//iframe[contains(@src,&apos;api.sandbox&apos;)]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.141, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50272}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: d1b65e41439cc6138cef284a47cc7a52
+*** Element info: {Using=xpath, value=//span[@class=&apos;text-page-title&apos;]/p[text()=&apos;Select Payment&apos;]}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -203,17 +191,11 @@ Session ID: 24674fc936d9768f6e23f17d76d43021
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
 	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy20.getWrappedElement(Unknown Source)
-	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:50)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.frame(RemoteWebDriver.java:891)
-	at org.openqa.selenium.support.ui.ExpectedConditions$19.apply(ExpectedConditions.java:553)
-	at org.openqa.selenium.support.ui.ExpectedConditions$19.apply(ExpectedConditions.java:549)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	at pageClasses.OrderSummary.switchTwoFrames(OrderSummary.java:139)
-	at pageClasses.OrderSummary.verifyOTPpage(OrderSummary.java:130)
-	at stepDefinitions.stepDefinition.user_verifies_pop_password_textbox(stepDefinition.java:102)
+	at pageClasses.OrderSummary.verifyPageTitle(OrderSummary.java:76)
+	at stepDefinitions.stepDefinition.user_verifies_popup_page_title_as(stepDefinition.java:71)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -263,19 +245,32 @@ Session ID: 24674fc936d9768f6e23f17d76d43021
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
+  When User clicks on payment method as &quot;Credit/Debit Card&quot;                                               # stepDefinitions.stepDefinition.user_clicks_on_payment_method_as(java.lang.String)
+  Then User verifies popup page title as &quot;Credit/Debit Card&quot;                                              # stepDefinitions.stepDefinition.user_verifies_popup_page_title_as(java.lang.String)
+  When User enters card details &quot;4911111111111113&quot; and &quot;02&quot; and &quot;20&quot; and &quot;123&quot;                            # stepDefinitions.stepDefinition.user_enters_card_details_and_and_and(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+  And User clicks on PayNow button                                                                        # stepDefinitions.stepDefinition.user_clicks_on_pay_now_button()
+  Then User verifies pop password textbox                                                                 # stepDefinitions.stepDefinition.user_verifies_pop_password_textbox()
   When User enters password details &quot;112233&quot; and clicks ok button                                         # stepDefinitions.stepDefinition.user_enters_password_details_and_clicks_ok_button(java.lang.String)
   Then User verfies transaction successfull message                                                       # stepDefinitions.stepDefinition.user_verfies_transaction_successfull_message()
   And close the browser                                                                                   # stepDefinitions.stepDefinition.close_the_browser()
-
-    Embedding Failed Step [image/png 162361 bytes]
+      java.lang.RuntimeException: Unexpected result for screenshot command: null
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:304)
+	at stepDefinitions.stepDefinition.closeBrowser(stepDefinition.java:29)
 
 </system-out>
-    <system-err>Starting ChromeDriver 87.0.4280.88 (89e2380a3e36c3464b5dd1302349b1382549290d-refs/branch-heads/4280@{#1761}) on port 23890
+    <system-err>Starting ChromeDriver 87.0.4280.88 (89e2380a3e36c3464b5dd1302349b1382549290d-refs/branch-heads/4280@{#1761}) on port 22264
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-Jan 17, 2021 8:23:11 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+Jan 18, 2021 12:56:25 AM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
+[1610911647.870][WARNING]: screenshot failed, retrying disconnected: received Inspector.detached event
 </system-err>
+  </testcase>
+  <testcase classname="PurchasePillow" name="Test end to end checkout flow for purchasing Pillow using Credit Card as payment method #2" time="67.103">
+    <error message="Unexpected result for screenshot command: null" type="java.lang.RuntimeException">java.lang.RuntimeException: Unexpected result for screenshot command: null
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:304)
+	at stepDefinitions.stepDefinition.closeBrowser(stepDefinition.java:29)
+</error>
   </testcase>
 </testsuite>

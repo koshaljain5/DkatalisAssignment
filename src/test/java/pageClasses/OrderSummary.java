@@ -88,6 +88,9 @@ public class OrderSummary extends BaseClass {
 	{
 		wait.ignoring(WebDriverException.class)
 			.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameOrderSummary));
+		Assert.assertTrue(
+				driver.findElements(By.xpath("//span[@class='item-name' and contains(text(),'Midtrans Pillow')]"))
+					.size()>0);
 		waitfluent.until(ExpectedConditions.visibilityOf(btn_Continue));
 		((JavascriptExecutor) driver).executeScript("return arguments[0].click();", btn_Continue);
 		driver.switchTo().defaultContent();
@@ -103,6 +106,13 @@ public class OrderSummary extends BaseClass {
 		txt_CardNumber.sendKeys(cardnumer);
 		txt_CardExpiry.sendKeys(expiryDate);
 		txt_CardCVV.sendKeys(cvv);
+		
+		//Verifies Expiry date is Not Invalid
+		Assert.assertFalse(
+				driver.findElements(
+						By.xpath("//label[text()='Expiry date']/parent::div[contains(@class,'error')]"))
+							.size()>0);
+		
 		driver.switchTo().defaultContent();
 	}
 	

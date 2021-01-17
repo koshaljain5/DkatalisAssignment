@@ -1,5 +1,6 @@
-Feature: checkout
+Feature: PurchasePillow
 
+@WebScenario
 Scenario Outline: Test end to end checkout flow for purchasing Pillow using Credit Card as payment method
 Given User Launches "chrome" browser
 When Navigate to URL "https://demo.midtrans.com/"
